@@ -14,6 +14,7 @@ import Sponsors from "./pages/Sponsors";
 import NotFound from "@/pages/not-found";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,16 @@ function Router() {
   );
 }
 
+// Remount the error boundary on navigation so one page's error doesn't stick.
+function Page() {
+  const [location] = useLocation();
+  return (
+    <ErrorBoundary key={location}>
+      <Router />
+    </ErrorBoundary>
+  );
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -53,7 +64,7 @@ function App() {
           <ScrollToTop />
           <Nav />
           <main>
-            <Router />
+            <Page />
           </main>
           <Footer />
         </WouterRouter>
