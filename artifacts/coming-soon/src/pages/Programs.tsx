@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { fadeUp, stagger } from "@/lib/motion";
 import {
   Footprints,
   Tent,
@@ -7,7 +9,8 @@ import {
   Target,
   Leaf,
   ChevronRight,
-  Bell,
+  CalendarDays,
+  ArrowRight,
   TreePine,
 } from "lucide-react";
 
@@ -44,16 +47,6 @@ const programs = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
-
-const stagger = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
-
 export default function Programs() {
   return (
     <div className="min-h-screen bg-background pt-24">
@@ -77,7 +70,7 @@ export default function Programs() {
               Why Outdoor Adventure?
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-sans max-w-3xl mx-auto">
-              Shared outdoor experiences create a unique environment where families can grow together beyond the barriers of language and culture. For immigrant and multi-generational families, time in nature offers more than recreation — it builds trust, strengthens relationships, and develops the character and resilience needed to thrive in a new community. At Family Adventures Northwest, every program is designed to meet families where they are and journey forward together.
+              Shared outdoor experiences create a unique environment where families grow together. Away from screens and busy schedules, parents, children, and grandparents face new challenges side by side — building trust, deepening their connection, and learning life lessons that last. These intentional, experiential moments help children grow in character and help every family thrive. At Family Adventures Northwest, we remove the financial and logistical barriers so every family can take part.
             </p>
           </motion.div>
         </motion.div>
@@ -125,20 +118,26 @@ export default function Programs() {
               );
             })}
 
-            {/* Coming Soon callout */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: programs.length * 0.08 + 0.1 } },
               }}
-              className="flex items-center gap-4 bg-secondary/30 border-2 border-secondary/50 rounded-2xl px-6 py-5 mt-2"
+              className="flex flex-col sm:flex-row sm:items-center gap-4 bg-secondary/30 border-2 border-secondary/50 rounded-2xl px-6 py-5 mt-2"
             >
               <div className="w-11 h-11 rounded-xl bg-secondary/60 flex items-center justify-center shrink-0">
-                <Bell className="w-5 h-5 text-secondary-foreground" aria-hidden="true" />
+                <CalendarDays className="w-5 h-5 text-secondary-foreground" aria-hidden="true" />
               </div>
-              <p className="font-display font-semibold text-secondary-foreground">
-                Coming Soon — More Programs &amp; Initiatives!
+              <p className="flex-1 font-display font-semibold text-secondary-foreground">
+                We host a new family adventure every month.
               </p>
+              <Link
+                href="/events"
+                className="inline-flex items-center gap-1.5 font-semibold text-sm text-primary hover:underline shrink-0"
+              >
+                See events
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
             </motion.div>
           </div>
         </motion.div>

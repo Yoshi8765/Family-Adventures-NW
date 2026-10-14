@@ -1,7 +1,35 @@
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Mountain, Mail, Trees, Compass, ArrowRight, MapPin, Backpack, Users, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Mountain, Mail, Compass, ArrowRight, MapPin, Backpack, Users, X, ChevronLeft, ChevronRight, CalendarDays, HandCoins, Handshake } from "lucide-react";
 import { Link } from "wouter";
+import EventCard from "@/components/EventCard";
+import { upcomingEvents } from "@/content/events";
+import { ADDRESS, BLURB, CONTACT_EMAIL } from "@/content/site";
+import { fadeUp, stagger as staggerContainer } from "@/lib/motion";
+
+const getInvolved = [
+  {
+    icon: CalendarDays,
+    title: "Join an Adventure",
+    desc: "We host a family event every month. Find the next one and reserve your spot.",
+    href: "/events",
+    cta: "See events",
+  },
+  {
+    icon: HandCoins,
+    title: "Apply for a Fee Grant",
+    desc: "Cost shouldn't keep any family home. Apply for help covering event fees.",
+    href: "/fee-grant",
+    cta: "Apply now",
+  },
+  {
+    icon: Handshake,
+    title: "Sponsor or Give a Grant",
+    desc: "Businesses and foundations can help more families share meaningful experiences.",
+    href: "/sponsors",
+    cta: "Learn more",
+  },
+];
 
 export default function Home() {
   const heroImageUrl = `${import.meta.env.BASE_URL}images/photo-mountain.jpg`;
@@ -98,19 +126,7 @@ export default function Home() {
     }
   };
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.1 }
-    }
-  };
-
+  const nextEvent = upcomingEvents()[0];
 
   return (
     <div className="min-h-screen flex flex-col w-full overflow-hidden bg-background">
@@ -135,7 +151,7 @@ export default function Home() {
         >
           <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white mb-8 shadow-sm">
             <Compass className="w-4 h-4" />
-            <span className="text-sm font-semibold tracking-wide uppercase font-sans">Coming Soon</span>
+            <span className="text-sm font-semibold tracking-wide uppercase font-sans">Monthly Family Adventures</span>
           </motion.div>
 
           <motion.h1
@@ -155,21 +171,49 @@ export default function Home() {
             variants={fadeUp}
             className="text-lg md:text-xl text-white/85 max-w-prose mx-auto leading-relaxed mb-10 font-sans drop-shadow"
           >
-            Something beautiful is on the way. We are getting ready to launch our full list of programs to connect and empower immigrant families in the Pacific Northwest.
+            {BLURB}
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:familyadventuresnw@gmail.com"
+            <Link
+              href="/events"
               className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-primary-foreground bg-primary shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300"
             >
-              <Mail className="w-5 h-5" />
-              <span>Get in touch</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+              <CalendarDays className="w-5 h-5" aria-hidden="true" />
+              <span>Upcoming events</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/fee-grant"
+              className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-white bg-white/15 border border-white/30 backdrop-blur-md hover:bg-white/25 hover:-translate-y-1 transition-all duration-300"
+            >
+              <HandCoins className="w-5 h-5" aria-hidden="true" />
+              <span>Apply for a fee grant</span>
+            </Link>
           </motion.div>
         </motion.div>
       </section>
+
+      {/* NEXT ADVENTURE */}
+      {nextEvent && (
+        <section className="relative z-10 pt-16 pb-8 px-4 sm:px-6 lg:px-8 bg-background">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.div variants={fadeUp} className="text-center mb-10">
+              <h2 className="text-sm font-bold font-display tracking-widest uppercase text-accent mb-4">Next Adventure</h2>
+              <p className="text-3xl md:text-4xl font-display font-bold text-foreground">Join us this month</p>
+            </motion.div>
+            <motion.div variants={fadeUp}>
+              <EventCard event={nextEvent} />
+            </motion.div>
+          </motion.div>
+        </section>
+      )}
 
       {/* PHOTO GALLERY — Adventures Await */}
       <section className="relative z-10 py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-muted/20">
@@ -338,65 +382,61 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* STAY CONNECTED */}
+      {/* GET INVOLVED */}
       <section className="relative z-10 py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-muted/30 border-t border-border/50">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-5xl mx-auto"
         >
-          <motion.div variants={fadeUp}>
-            <Mountain className="w-12 h-12 text-primary mx-auto mb-6 opacity-80" />
+          <motion.div variants={fadeUp} className="text-center mb-14">
+            <Mountain className="w-12 h-12 text-primary mx-auto mb-6 opacity-80" aria-hidden="true" />
             <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
               Join us on this journey.
             </h2>
-            <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto font-sans">
-              Our full website is currently under construction. We'd love for you to stay connected and be the first to know when we launch our new programs.
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto font-sans">
+              Whether you're a family looking for your next adventure or an organization that wants to help, there's a place for you.
             </p>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="flex flex-col items-center gap-4 w-full">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
-              <a
-                href="mailto:familyadventuresnw@gmail.com"
-                className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-xl font-semibold bg-card text-foreground border-2 border-border shadow-sm hover:border-primary/30 hover:bg-primary/5 hover:-translate-y-1 transition-all duration-300"
-              >
-                <Mail className="w-5 h-5 text-primary" />
-                <span>familyadventuresnw@gmail.com</span>
-              </a>
-            </div>
+          <div className="grid gap-6 md:grid-cols-3 mb-12">
+            {getInvolved.map(({ icon: Icon, title, desc, href, cta }) => (
+              <motion.div key={href} variants={fadeUp}>
+                <Link
+                  href={href}
+                  className="group flex flex-col h-full bg-card rounded-3xl p-8 border border-border/50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                    <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-display font-bold text-xl text-foreground mb-3">{title}</h3>
+                  <p className="font-sans text-muted-foreground leading-relaxed mb-5 flex-1">{desc}</p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                    {cta}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto px-6 py-4 rounded-xl bg-card border-2 border-border shadow-sm text-muted-foreground mt-4">
-              <MapPin className="w-5 h-5 text-primary shrink-0" />
-              <div className="text-left font-sans">
-                <p className="font-medium text-foreground text-sm">Our Location</p>
-                <p className="text-sm">6328 180th St SW, Lynnwood, WA 98037</p>
-              </div>
+          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-stretch justify-center gap-4">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-semibold bg-card text-foreground border-2 border-border shadow-sm hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 break-all"
+            >
+              <Mail className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
+              <span>{CONTACT_EMAIL}</span>
+            </a>
+            <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-card border-2 border-border shadow-sm">
+              <MapPin className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
+              <span className="text-sm font-sans text-foreground">{ADDRESS}</span>
             </div>
           </motion.div>
         </motion.div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="relative z-10 border-t border-border bg-background py-12 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 text-foreground">
-            <Trees className="w-5 h-5 text-primary/80" />
-            <span className="font-display font-semibold text-lg">Family Adventures NW</span>
-          </div>
-
-          <div className="text-center md:text-right">
-            <p className="text-muted-foreground text-sm">
-              &copy; {new Date().getFullYear()} Family Adventures Northwest.<br className="md:hidden" /> All rights reserved.
-            </p>
-            <p className="text-xs text-muted-foreground/60 mt-1">
-              Full website coming soon.
-            </p>
-          </div>
-        </div>
-      </footer>
 
       {/* LIGHTBOX */}
       {lightboxIndex !== null && (
