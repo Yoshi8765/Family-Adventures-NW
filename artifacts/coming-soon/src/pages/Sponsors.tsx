@@ -10,7 +10,7 @@ const ways = [
   {
     icon: Building2,
     title: "Businesses",
-    desc: "Sponsor an event, a season of adventures, or in-kind gear and services. Sponsors can be recognized at our events and on this site.",
+    desc: "Sponsor an event, a season of adventures, or in-kind gear and services. Sponsors can be recognized at our events, our website, and our social media! Please inquire to discuss sponsorships and promotion partnering with FANW!",
   },
   {
     icon: Landmark,
