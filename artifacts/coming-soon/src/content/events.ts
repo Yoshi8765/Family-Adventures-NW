@@ -8,7 +8,7 @@
 
 export type EventFaq = { q: string; a: string };
 
-export type EventPhoto = { src: string; alt: string };
+export type EventPhoto = { src?: string; alt: string };
 
 export type FamilyEvent = {
   slug: string;
@@ -142,18 +142,28 @@ export const events: FamilyEvent[] = [
     ],
   },
   {
-    // TODO: fill in the date, title and recap for our first event, and add
-    // photos once they're uploaded.
-    slug: "first-adventure",
-    title: "Our First Family Adventure",
-    past: true,
-    // date: "2026-MM-DD",
+    slug: "one-rope-bridge",
+    title: "One-Rope Bridge Adventure",
+    date: "2026-09-05",
+    time: "9:00 AM – 11:00 AM",
+    location: "Wilcox Park, Lynnwood",
+    cost: "$30 for the entire family",
+    // TODO: replace this summary with the recap blurb.
     summary:
-      "Our very first Family Adventures Northwest adventure brought families together for a day of shared experiences outdoors.",
-    // flyer: "images/events/first-adventure/flyer.jpg",
-    // recap: "",
+      "Our first adventure! Kids ages 6–12 and their parents built a one-rope bridge together at Wilcox Park — gaining technical skills, learning new knots, problem solving, practicing teamwork, and overcoming fears — followed by a complimentary Labor Day weekend BBQ lunch.",
+    flyer: "images/events/one-rope-bridge/flyer.jpg",
+    flyerAlt:
+      "Flyer for the One Rope Bridge adventure: September 5, 2026, 9am to 11am at Wilcox Park, Lynnwood, for 6–12 year olds and parents. Gain technical skills, learn new knots, problem solve, practice teamwork, and overcome fears. $30 for the entire family, with a complimentary Labor Day weekend BBQ lunch.",
+    // TODO: upload photos to public/images/events/one-rope-bridge/ and add a
+    // `src` to each entry (e.g. src: "images/events/one-rope-bridge/photo-1.jpg").
+    // Entries without a `src` show as placeholder tiles.
     photos: [
-      // { src: "images/events/first-adventure/photo-1.jpg", alt: "Describe the photo" },
+      { alt: "Photo from the One-Rope Bridge Adventure" },
+      { alt: "Photo from the One-Rope Bridge Adventure" },
+      { alt: "Photo from the One-Rope Bridge Adventure" },
+      { alt: "Photo from the One-Rope Bridge Adventure" },
+      { alt: "Photo from the One-Rope Bridge Adventure" },
+      { alt: "Photo from the One-Rope Bridge Adventure" },
     ],
   },
 ];

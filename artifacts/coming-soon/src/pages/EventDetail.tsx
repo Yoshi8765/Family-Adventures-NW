@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, CalendarDays, Camera, Clock, ExternalLink, HandCoins, MapPin, Ticket } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import PhotoGallery from "@/components/PhotoGallery";
 import { findEvent, formatEventDate, isPast } from "@/content/events";
 import { fadeUp, stagger } from "@/lib/motion";
 
@@ -127,24 +128,7 @@ export default function EventDetail({ params }: { params: { slug: string } }) {
               <Camera className="w-7 h-7 text-primary" aria-hidden="true" />
               Photos
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-              {event.photos.map((photo) => (
-                <a
-                  key={photo.src}
-                  href={`${base}${photo.src}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative overflow-hidden rounded-2xl aspect-[4/3] bg-muted border border-border/50 shadow-md group"
-                >
-                  <img
-                    src={`${base}${photo.src}`}
-                    alt={photo.alt}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </a>
-              ))}
-            </div>
+            <PhotoGallery photos={event.photos} />
           </div>
         </section>
       )}

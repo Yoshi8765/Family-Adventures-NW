@@ -3,7 +3,7 @@ import { ArrowRight, CalendarDays, Clock, MapPin, Ticket } from "lucide-react";
 import { formatEventDate, type FamilyEvent } from "@/content/events";
 
 export default function EventCard({ event }: { event: FamilyEvent }) {
-  const cover = event.flyer ?? event.photos?.[0]?.src;
+  const cover = event.photos?.find((p) => p.src)?.src ?? event.flyer;
   return (
     <Link
       href={`/adventures/${event.slug}`}
