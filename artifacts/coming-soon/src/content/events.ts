@@ -38,9 +38,9 @@ export const events: FamilyEvent[] = [
     cost: "$30 per family (fee grants available)",
     summary:
       "A park offers so much more if you look at it from an \"adventure\" perspective! Spend a morning learning how to do adventure family orienteering! Appropriate for ages 6–14 and parents. Includes instruction, maps, compasses, activities and optional lunch afterward. Build real-life skills like reading a map, using a compass, identifying natural features, practicing teamwork, and exploring a park together while completing fun challenges!",
-    // TODO: upload the flyer and uncomment these lines.
-    // flyer: "images/events/family-orienteering/flyer.jpg",
-    // flyerAlt: "Flyer for the Family Orienteering Adventure",
+    flyer: "images/events/family-orienteering/flyer.jpg",
+    flyerAlt:
+      "Flyer for Family Orienteering — explore, learn, grow together. Saturday, October 24, 2026, 10:00 AM to 12:00 PM, at a park in central Lynnwood; exact location provided to registered participants. Ages 6–14 and parents, younger siblings welcome. $30 for the entire family, including instruction, maps, compasses, activities and optional lunch afterward. Sponsored spots available. Build real-life skills: read a map, use a compass, identify features in nature, complete fun challenges, practice teamwork, and explore the park together.",
     rsvpUrl: "https://pci.jotform.com/form/262596721046158",
     faq: [
       {
