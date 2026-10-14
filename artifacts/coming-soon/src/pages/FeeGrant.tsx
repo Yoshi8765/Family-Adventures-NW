@@ -10,8 +10,8 @@ export default function FeeGrant() {
     <div className="min-h-screen bg-background pt-24">
       <PageHeader icon={HandCoins} eyebrow="Removing Barriers" title="Apply for a Fee Grant">
         <p>
-          Cost should never keep a family from sharing an adventure together. Our fee grants reduce or cover event
-          costs for families who need support.
+          Cost should never keep a family from sharing an adventure together. Fee grants reduce or cover Adventures for families who need support. Funded by our partners and grants, they
+          help lower the wall that fees can put between families and the outdoors.
         </p>
         <p>
           Fill out the short application below. We review every application with care and will follow up with you by

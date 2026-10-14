@@ -106,10 +106,10 @@ export default function AboutUs() {
             every experience, so the lessons learned outdoors carry over into everyday family life.
           </p>
           <Link
-            href="/events"
+            href="/adventures"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold font-sans text-sm bg-primary text-primary-foreground shadow-md shadow-primary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
           >
-            See upcoming events
+            See upcoming adventures
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </motion.div>

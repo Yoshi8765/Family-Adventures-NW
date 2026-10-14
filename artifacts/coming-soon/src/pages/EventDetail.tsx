@@ -12,9 +12,9 @@ export default function EventDetail({ params }: { params: { slug: string } }) {
   if (!event) {
     return (
       <div className="min-h-screen bg-background pt-40 px-4 text-center">
-        <h1 className="text-3xl font-display font-bold text-foreground mb-4">Event not found</h1>
-        <Link href="/events" className="font-semibold text-primary hover:underline">
-          See all events
+        <h1 className="text-3xl font-display font-bold text-foreground mb-4">Adventure not found</h1>
+        <Link href="/adventures" className="font-semibold text-primary hover:underline">
+          See all adventures
         </Link>
       </div>
     );
@@ -28,18 +28,18 @@ export default function EventDetail({ params }: { params: { slug: string } }) {
         <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-5xl mx-auto">
           <motion.div variants={fadeUp}>
             <Link
-              href="/events"
+              href="/adventures"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline mb-8"
             >
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              All events
+              All adventures
             </Link>
           </motion.div>
 
           <div className={`grid gap-10 ${event.flyer ? "md:grid-cols-[1fr_minmax(0,380px)]" : ""} items-start`}>
             <motion.div variants={fadeUp}>
               <p className="text-sm font-bold font-display tracking-widest uppercase text-accent mb-4">
-                {past ? "Past Event" : "Upcoming Event"}
+                {past ? "Past Adventure" : "Upcoming Adventure"}
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
                 {event.title}

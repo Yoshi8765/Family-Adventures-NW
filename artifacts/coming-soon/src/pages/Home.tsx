@@ -11,14 +11,14 @@ const getInvolved = [
   {
     icon: CalendarDays,
     title: "Join an Adventure",
-    desc: "We host a family event every month. Find the next one and reserve your spot.",
-    href: "/events",
-    cta: "See events",
+    desc: "We host a family adventure every month. Find the next one and reserve your spot.",
+    href: "/adventures",
+    cta: "See adventures",
   },
   {
     icon: HandCoins,
     title: "Apply for a Fee Grant",
-    desc: "Cost shouldn't keep any family home. Apply for help covering event fees.",
+    desc: "Cost shouldn't keep any family home. Fee grants reduce or cover Adventures.",
     href: "/fee-grant",
     cta: "Apply now",
   },
@@ -176,11 +176,11 @@ export default function Home() {
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/events"
+              href="/adventures"
               className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-primary-foreground bg-primary shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300"
             >
               <CalendarDays className="w-5 h-5" aria-hidden="true" />
-              <span>Upcoming events</span>
+              <span>Upcoming adventures</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
             <Link

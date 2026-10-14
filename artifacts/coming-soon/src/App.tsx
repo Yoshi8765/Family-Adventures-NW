@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { Switch, Route, Redirect, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -29,8 +29,14 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={AboutUs} />
       <Route path="/programs" component={Programs} />
-      <Route path="/events" component={Events} />
-      <Route path="/events/:slug" component={EventDetail} />
+      <Route path="/adventures" component={Events} />
+      <Route path="/adventures/:slug" component={EventDetail} />
+      <Route path="/events">
+        <Redirect to="/adventures" replace />
+      </Route>
+      <Route path="/events/:slug">
+        {(params) => <Redirect to={`/adventures/${params.slug}`} replace />}
+      </Route>
       <Route path="/fee-grant" component={FeeGrant} />
       <Route path="/media-release" component={MediaRelease} />
       <Route path="/sponsors" component={Sponsors} />

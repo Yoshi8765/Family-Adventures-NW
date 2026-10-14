@@ -6,7 +6,7 @@ export default function EventCard({ event }: { event: FamilyEvent }) {
   const cover = event.flyer ?? event.photos?.[0]?.src;
   return (
     <Link
-      href={`/events/${event.slug}`}
+      href={`/adventures/${event.slug}`}
       className="group flex flex-col sm:flex-row bg-card rounded-3xl border border-border/50 shadow-sm overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
     >
       {cover && (

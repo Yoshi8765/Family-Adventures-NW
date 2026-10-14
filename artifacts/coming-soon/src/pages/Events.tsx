@@ -12,9 +12,9 @@ export default function Events() {
 
   return (
     <div className="min-h-screen bg-background pt-24">
-      <PageHeader icon={CalendarDays} eyebrow="Join Us" title="Events">
+      <PageHeader icon={CalendarDays} eyebrow="Join Us" title="Adventures">
         <p>
-          We host a family adventure every month. Each event is designed so families of every background and generation
+          We host a family adventure every month. Each adventure is designed so families of every background and generation
           can show up, connect, and grow together — we take care of the logistics and keep costs low.
         </p>
       </PageHeader>
@@ -27,7 +27,7 @@ export default function Events() {
           className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[1fr_minmax(0,420px)] items-start"
         >
           <motion.div variants={fadeUp}>
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">Upcoming Events</h2>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">Upcoming Adventures</h2>
             {upcoming.length > 0 ? (
               <div className="flex flex-col gap-6">
                 {upcoming.map((e) => (
@@ -58,7 +58,7 @@ export default function Events() {
             className="max-w-6xl mx-auto"
           >
             <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
-              Past Events
+              Past Adventures
             </motion.h2>
             <div className="grid gap-6 md:grid-cols-2">
               {past.map((e) => (

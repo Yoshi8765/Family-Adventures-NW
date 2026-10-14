@@ -5,7 +5,7 @@ import { ADDRESS, BLURB, CONTACT_EMAIL } from "@/content/site";
 const footerLinks = [
   { label: "About Us", href: "/about" },
   { label: "Programs", href: "/programs" },
-  { label: "Events", href: "/events" },
+  { label: "Adventures", href: "/adventures" },
   { label: "Fee Grants", href: "/fee-grant" },
   { label: "Media Release", href: "/media-release" },
   { label: "Sponsors & Grants", href: "/sponsors" },

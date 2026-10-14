@@ -8,9 +8,9 @@ import { fadeUp } from "@/lib/motion";
 export default function MediaRelease() {
   return (
     <div className="min-h-screen bg-background pt-24">
-      <PageHeader icon={Camera} eyebrow="For Event Participants" title="Media Release">
+      <PageHeader icon={Camera} eyebrow="For Adventure Participants" title="Media Release">
         <p>
-          We love capturing the joy of families adventuring together. If you're attending one of our events, please
+          We love capturing the joy of families adventuring together. If you're joining one of our adventures, please
           complete the media release below so we can share photos and videos from the day.
         </p>
         <p className="text-base">

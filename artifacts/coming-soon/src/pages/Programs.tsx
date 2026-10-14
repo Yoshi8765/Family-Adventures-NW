@@ -132,10 +132,10 @@ export default function Programs() {
                 We host a new family adventure every month.
               </p>
               <Link
-                href="/events"
+                href="/adventures"
                 className="inline-flex items-center gap-1.5 font-semibold text-sm text-primary hover:underline shrink-0"
               >
-                See events
+                See adventures
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </motion.div>

@@ -78,7 +78,7 @@ export default function EventCalendar() {
             return (
               <Link
                 key={iso}
-                href={`/events/${dayEvents[0].slug}`}
+                href={`/adventures/${dayEvents[0].slug}`}
                 aria-label={`${day}: ${dayEvents.map((e) => e.title).join(", ")}`}
                 className={`${base} bg-primary text-primary-foreground font-bold shadow-md shadow-primary/20 hover:-translate-y-0.5 transition-transform`}
               >
@@ -102,7 +102,7 @@ export default function EventCalendar() {
           <ul className="space-y-2">
             {monthEvents.map((e) => (
               <li key={e.slug}>
-                <Link href={`/events/${e.slug}`} className="flex items-baseline gap-3 font-sans text-sm group">
+                <Link href={`/adventures/${e.slug}`} className="flex items-baseline gap-3 font-sans text-sm group">
                   <span className="font-semibold text-primary shrink-0">
                     {parseEventDate(e.date!).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                   </span>
@@ -113,7 +113,7 @@ export default function EventCalendar() {
           </ul>
         ) : (
           <p className="text-sm text-muted-foreground font-sans">
-            No events scheduled this month yet. We host a family adventure every month — check back soon!
+            No adventures scheduled this month yet. We host a family adventure every month — check back soon!
           </p>
         )}
       </div>

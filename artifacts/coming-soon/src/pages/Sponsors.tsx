@@ -10,7 +10,7 @@ const ways = [
   {
     icon: Building2,
     title: "Businesses",
-    desc: "Sponsor an event, a season of adventures, or in-kind gear and services. Sponsors can be recognized at our events, our website, and our social media! Please inquire to discuss sponsorships and promotion partnering with FANW!",
+    desc: "Sponsor an adventure, a season of adventures, or in-kind gear and services. Sponsors can be recognized at our adventures, our website, and our social media! Please inquire to discuss sponsorships and promotion partnering with FANW!",
   },
   {
     icon: Landmark,
@@ -20,12 +20,12 @@ const ways = [
   {
     icon: Users,
     title: "Community Organizations",
-    desc: "Partner with us to host events, share expertise, or connect the families you serve with our monthly adventures.",
+    desc: "Partner with us to host adventures, share expertise, or connect the families you serve with our monthly adventures.",
   },
 ];
 
 const impact = [
-  "Fee grants so families can attend regardless of income",
+  "Fee grants so families can join adventures regardless of income",
   "Transportation and logistics that make outings simple",
   "Equipment, permits, and guided activities",
   "Character-building curriculum woven into every experience",
