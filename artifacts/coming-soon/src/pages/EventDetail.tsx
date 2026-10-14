@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, CalendarDays, Camera, Clock, ExternalLink, HandCoins, MapPin } from "lucide-react";
+import { ArrowLeft, CalendarDays, Camera, Clock, ExternalLink, HandCoins, MapPin, Ticket } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { findEvent, formatEventDate, isPast } from "@/content/events";
 import { fadeUp, stagger } from "@/lib/motion";
@@ -61,6 +61,12 @@ export default function EventDetail({ params }: { params: { slug: string } }) {
                   <li className="flex items-center gap-2.5">
                     <MapPin className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
                     {event.location}
+                  </li>
+                )}
+                {event.cost && (
+                  <li className="flex items-center gap-2.5">
+                    <Ticket className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
+                    {event.cost}
                   </li>
                 )}
               </ul>

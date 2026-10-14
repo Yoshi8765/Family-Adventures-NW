@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, CalendarDays, Clock, MapPin } from "lucide-react";
+import { ArrowRight, CalendarDays, Clock, MapPin, Ticket } from "lucide-react";
 import { formatEventDate, type FamilyEvent } from "@/content/events";
 
 export default function EventCard({ event }: { event: FamilyEvent }) {
@@ -39,6 +39,12 @@ export default function EventCard({ event }: { event: FamilyEvent }) {
             <li className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
               {event.location}
+            </li>
+          )}
+          {event.cost && (
+            <li className="flex items-center gap-2">
+              <Ticket className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+              {event.cost}
             </li>
           )}
         </ul>
