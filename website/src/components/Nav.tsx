@@ -30,7 +30,9 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => setMenuOpen(false), [location]);
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
 
   const linkClass = (active: boolean) =>
     `px-3 xl:px-4 py-2 rounded-lg text-sm font-semibold font-sans transition-all duration-200 whitespace-nowrap ${
