@@ -43,9 +43,6 @@ function Router() {
       </Route>
       <Route path="/fee-grant" component={FeeGrant} />
       <Route path="/forms" component={Forms} />
-      <Route path="/media-release">
-        <Redirect to="/forms" replace />
-      </Route>
       <Route path="/sponsors" component={Sponsors} />
       <Route path="/mailing-list" component={MailingList} />
       <Route component={NotFound} />
