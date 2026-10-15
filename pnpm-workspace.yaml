@@ -1,4 +1,5 @@
 packages:
+  - website
   - artifacts/*
   - lib/*
   - lib/integrations/*
