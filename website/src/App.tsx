@@ -9,7 +9,7 @@ import Programs from "./pages/Programs";
 import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import FeeGrant from "./pages/FeeGrant";
-import MediaRelease from "./pages/MediaRelease";
+import Forms from "./pages/Forms";
 import Sponsors from "./pages/Sponsors";
 import MailingList from "./pages/MailingList";
 import NotFound from "@/pages/not-found";
@@ -42,7 +42,10 @@ function Router() {
         {(params) => <Redirect to={`/adventures/${params.slug}`} replace />}
       </Route>
       <Route path="/fee-grant" component={FeeGrant} />
-      <Route path="/media-release" component={MediaRelease} />
+      <Route path="/forms" component={Forms} />
+      <Route path="/media-release">
+        <Redirect to="/forms" replace />
+      </Route>
       <Route path="/sponsors" component={Sponsors} />
       <Route path="/mailing-list" component={MailingList} />
       <Route component={NotFound} />

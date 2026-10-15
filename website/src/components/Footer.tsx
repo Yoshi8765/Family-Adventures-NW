@@ -7,7 +7,7 @@ const footerLinks = [
   { label: "Programs", href: "/programs" },
   { label: "Adventures", href: "/adventures" },
   { label: "Fee Grants", href: "/fee-grant" },
-  { label: "Media Release", href: "/media-release" },
+  { label: "Forms", href: "/forms" },
   { label: "Sponsors & Grants", href: "/sponsors" },
   { label: "Mailing List", href: "/mailing-list" },
 ];

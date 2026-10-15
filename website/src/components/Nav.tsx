@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Programs", href: "/programs" },
   { label: "Adventures", href: "/adventures" },
   { label: "Sponsors & Grants", href: "/sponsors" },
-  { label: "Media Release", href: "/media-release" },
+  { label: "Forms", href: "/forms" },
 ];
 
 // Shown in the phone menu only; the desktop bar has no room for more links.
@@ -74,12 +74,12 @@ export default function Nav() {
             <Trees className="w-5 h-5" />
           </div>
           <span
-            className={`font-display font-bold text-lg md:text-xl tracking-tight transition-colors duration-300 ${
+            className={`font-display font-bold text-lg md:text-xl tracking-tight whitespace-nowrap transition-colors duration-300 ${
               isTransparent ? "text-white drop-shadow-md" : "text-foreground"
             }`}
           >
-            <span className="hidden sm:inline">Family Adventures Northwest</span>
-            <span className="sm:hidden">Family Adventures NW</span>
+            <span className="hidden sm:inline lg:hidden xl:inline">Family Adventures Northwest</span>
+            <span className="sm:hidden lg:inline xl:hidden">Family Adventures NW</span>
           </span>
         </Link>
 

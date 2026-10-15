@@ -159,7 +159,7 @@ export default function EventDetail({ params }: { params: { slug: string } }) {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30 border-t border-border/50">
           <p className="max-w-3xl mx-auto text-center font-sans text-muted-foreground">
             Attending? Please complete our{" "}
-            <Link href="/media-release" className="font-semibold text-primary hover:underline">
+            <Link href="/forms" className="font-semibold text-primary hover:underline">
               risk acknowledgement and media release form
             </Link>{" "}
             before the day. One form covers your household for all of our adventures.
