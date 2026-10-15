@@ -68,6 +68,15 @@ export default function JotFormEmbed({ url, title, fallbackSubject }: Props) {
 
   return (
     <div>
+      <a
+        href={form.src}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="sm:hidden flex items-center justify-center gap-2 w-full mb-4 px-6 py-3.5 rounded-xl font-semibold font-sans text-sm bg-card text-foreground border-2 border-border hover:border-primary/30"
+      >
+        Open the form full screen
+        <ExternalLink className="w-4 h-4 text-primary" aria-hidden="true" />
+      </a>
       <div className="bg-card rounded-3xl border border-border/50 shadow-sm overflow-hidden">
         <iframe
           id={`JotFormIFrame-${form.id}`}
@@ -75,7 +84,6 @@ export default function JotFormEmbed({ url, title, fallbackSubject }: Props) {
           src={form.src}
           allow="geolocation; microphone; camera; fullscreen; payment"
           className="w-full min-h-[700px] border-0"
-          scrolling="no"
         />
       </div>
       <p className="text-center text-sm text-muted-foreground font-sans mt-4">

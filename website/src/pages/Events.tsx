@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { CalendarDays } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowRight, CalendarDays, Mail } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import EventCalendar from "@/components/EventCalendar";
 import EventCard from "@/components/EventCard";
@@ -39,6 +40,16 @@ export default function Events() {
                 Our next monthly adventure will be posted here shortly.
               </p>
             )}
+            <Link
+              href="/mailing-list"
+              className="mt-6 flex items-center justify-between gap-4 bg-secondary/30 border-2 border-secondary/50 rounded-2xl px-5 py-4 font-sans text-secondary-foreground hover:bg-secondary/40 transition-colors"
+            >
+              <span className="flex items-center gap-3">
+                <Mail className="w-5 h-5 shrink-0" aria-hidden="true" />
+                <span className="font-semibold">Get future adventures in your inbox</span>
+              </span>
+              <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+            </Link>
           </motion.div>
 
           <motion.div variants={fadeUp}>

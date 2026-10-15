@@ -11,6 +11,9 @@ const navLinks = [
   { label: "Media Release", href: "/media-release" },
 ];
 
+// Shown in the phone menu only; the desktop bar has no room for more links.
+const mobileOnlyLinks = [{ label: "Mailing List", href: "/mailing-list" }];
+
 const ctaLink = { label: "Fee Grants", href: "/fee-grant" };
 
 function isActivePath(location: string, href: string) {
@@ -118,7 +121,7 @@ export default function Nav() {
       {menuOpen && (
         <nav id="mobile-menu" className="lg:hidden border-t border-border/40 px-4 sm:px-6 pb-6 pt-2" aria-label="Main navigation">
           <ul className="flex flex-col gap-1">
-            {[...navLinks, ctaLink].map(({ label, href }) => {
+            {[...navLinks, ...mobileOnlyLinks, ctaLink].map(({ label, href }) => {
               const active = isActivePath(location, href);
               return (
                 <li key={href}>

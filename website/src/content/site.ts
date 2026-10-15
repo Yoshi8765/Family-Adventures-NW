@@ -1,7 +1,7 @@
 // Site-wide text and links. Edit this file to update copy that appears in
 // several places on the website.
 
-export const CONTACT_EMAIL = "familyadventuresnw@gmail.com";
+export const CONTACT_EMAIL = "info@familyadventuresnw.org";
 
 export const ADDRESS = "6328 180th St SW, Lynnwood, WA 98037";
 
@@ -20,6 +20,7 @@ export const EDUCATIONAL_PARTNER = "Family Peace Association USA";
 // https://form.jotform.com/123456789 or https://pci.jotform.com/form/123456789).
 // While a link is empty, the page shows an "email us" message instead of the form.
 export const FORMS = {
-  feeGrant: "", // TODO: fee grant application form URL
+  feeGrant: "https://form.jotform.com/262875697752174",
   mediaRelease: "", // TODO: media release form URL
+  mailingList: "https://form.jotform.com/262095423099159",
 };

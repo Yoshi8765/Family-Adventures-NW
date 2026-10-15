@@ -23,6 +23,13 @@ const getInvolved = [
     cta: "Apply now",
   },
   {
+    icon: Mail,
+    title: "Join Our Mailing List",
+    desc: "Hear about upcoming adventures for parents and children to do together.",
+    href: "/mailing-list",
+    cta: "Sign up",
+  },
+  {
     icon: Handshake,
     title: "Sponsor or Give a Grant",
     desc: "Businesses and foundations can help more families share meaningful experiences.",
@@ -401,7 +408,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid gap-6 md:grid-cols-3 mb-12">
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 mb-12">
             {getInvolved.map(({ icon: Icon, title, desc, href, cta }) => (
               <motion.div key={href} variants={fadeUp}>
                 <Link

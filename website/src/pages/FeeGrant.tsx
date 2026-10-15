@@ -14,7 +14,7 @@ export default function FeeGrant() {
           help lower the wall that fees can put between families and the outdoors.
         </p>
         <p>
-          Fill out the short application below. We review every application with care and will follow up with you by
+          Fill out the application below. We review every application with care and will follow up with you by
           email.
         </p>
       </PageHeader>

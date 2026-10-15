@@ -11,6 +11,7 @@ import EventDetail from "./pages/EventDetail";
 import FeeGrant from "./pages/FeeGrant";
 import MediaRelease from "./pages/MediaRelease";
 import Sponsors from "./pages/Sponsors";
+import MailingList from "./pages/MailingList";
 import NotFound from "@/pages/not-found";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -43,6 +44,7 @@ function Router() {
       <Route path="/fee-grant" component={FeeGrant} />
       <Route path="/media-release" component={MediaRelease} />
       <Route path="/sponsors" component={Sponsors} />
+      <Route path="/mailing-list" component={MailingList} />
       <Route component={NotFound} />
     </Switch>
   );

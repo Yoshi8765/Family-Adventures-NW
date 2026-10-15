@@ -9,6 +9,7 @@ const footerLinks = [
   { label: "Fee Grants", href: "/fee-grant" },
   { label: "Media Release", href: "/media-release" },
   { label: "Sponsors & Grants", href: "/sponsors" },
+  { label: "Mailing List", href: "/mailing-list" },
 ];
 
 export default function Footer() {
