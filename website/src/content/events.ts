@@ -65,7 +65,7 @@ export const events: FamilyEvent[] = [
       },
       {
         q: "What if I need to cancel?",
-        a: "Just reach out to us at info@familyadventuresnw.org, and we'll take care of it with you directly.",
+        a: "Just reach out to us at info@familyadventuresnw.org or (425) 780-5534 and we'll take care of it with you directly.",
       },
       {
         q: "What is orienteering?",
