@@ -21,6 +21,6 @@ export const EDUCATIONAL_PARTNER = "Family Peace Association USA";
 // While a link is empty, the page shows an "email us" message instead of the form.
 export const FORMS = {
   feeGrant: "https://form.jotform.com/262875697752174",
-  mediaRelease: "", // TODO: media release form URL
+  mediaRelease: "https://form.jotform.com/262875874620165",
   mailingList: "https://form.jotform.com/262095423099159",
 };
